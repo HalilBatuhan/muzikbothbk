@@ -1,27 +1,29 @@
 {
-  "//1": "describes your app and its dependencies",
-  "//2": "https://docs.npmjs.com/files/package.json",
-  "//3": "updating this file will download and update your packages",
-  "name": "hello-express",
-  "version": "0.0.1",
-  "description": "A simple Node app built on Express, instantly up and running.",
-  "main": "server.js",
+  "name": "advanced-discord-music-bot",
+  "version": "3.0.0",
+  "description": "Advanced discord music bot made by Sudhan for Coding With Sudhan 4k Views",
+  "main": "index.js",
+  "license": "MIT",
   "scripts": {
-    "start": "node server.js"
-  },
-  "dependencies": {
-    "express": "^4.17.1"
+    "start": "node index.js"
   },
   "engines": {
-    "node": "12.x"
+    "node": "14.x"
   },
-  "repository": {
-    "url": "https://glitch.com/edit/#!/hello-express"
-  },
-  "license": "MIT",
-  "keywords": [
-    "node",
-    "glitch",
-    "express"
-  ]
+  "dependencies": {
+    "@discordjs/opus": "^0.3.2",
+    "discord.js": "^12.3.1",
+    "dotenv": "^8.2.0",
+    "ffmpeg": "0.0.4",
+    "ffmpeg-static": "^4.2.7",
+    "yt-search": "^2.2.4",
+    "ytdl-core": "^4.1.1",
+    "opusscript": "^0.0.7",
+    "youtube-sr": "^2.0.1",
+    "lyrics-finder": "^21.4.0",
+    "ytdl-core-discord": "^1.2.4",
+    "fs": "0.0.1-security",
+    "ytpl": "^2.0.0-alpha.3",
+    "node-opus": "^0.3.3"
+  }
 }
