@@ -1,6 +1,6 @@
-module.exports = async (client) => {
+module.exports = async (client) => {//youtube/NoblesYT
   console.log(`[API] Logged in as ${client.user.username}`);
-  await client.user.setActivity("Music", {
-    type: "LISTENING",//can be LISTENING, WATCHING, PLAYING, STREAMING
+  await client.user.setActivity("Youtube/NoblesYT", { //Oynuyor Kısmı
+    type: "WATCHING",//LISTENING, WATCHING, PLAYING, STREAMING
   });
 };
