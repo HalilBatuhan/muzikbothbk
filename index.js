@@ -17,7 +17,7 @@ fs.readdir(__dirname + "/events/", (err, files) => {//youtube.com/NoblesYT
     const event = require(__dirname + `/events/${file}`);
     let eventName = file.split(".")[0];
     client.on(eventName, event.bind(null, client));//youtube.com/NoblesYT
-    console.log("Loading Event: "+eventName)
+    console.log("Event Yükleniyor: "+eventName)
   });
 });
 
@@ -29,7 +29,7 @@ fs.readdir("./commands/", (err, files) => {//youtube.com/NoblesYT
     let props = require(`./commands/${file}`);
     let commandName = file.split(".")[0];
     client.commands.set(commandName, props);//youtube.com/NoblesYT
-    console.log("Loading Command: "+commandName)
+    console.log("Komut Yükleniyor: "+commandName)
   });
 });
 
