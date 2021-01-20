@@ -1,4 +1,4 @@
-require("dotenv").config();//youtube.com/NoblesYT
+const prefix = process.env.PREFIX;
 const fs = require("fs");
 const { Collection, Client } = require("discord.js");
 
@@ -6,9 +6,6 @@ const client = new Client();//youtube.com/NoblesYT
 client.commands = new Collection();//youtube.com/NoblesYT
 client.queue = new Map()
 
-client.config = {
-  prefix: process.env.PREFIX
-}
 
 //Loading Events
 fs.readdir(__dirname + "/events/", (err, files) => {//youtube.com/NoblesYT
