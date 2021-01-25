@@ -12,7 +12,7 @@ module.exports = {
 
   run: async function (client, message, args) {
     const queue = message.client.queue.get(message.guild.id);
-    if (!queue) return sendError("There is nothing playing.",message.channel).catch(console.error);
+    if (!queue) return sendError("Hiçbir şey çalmıyor.",message.channel).catch(console.error);
 
     let lyrics = null;
 

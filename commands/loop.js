@@ -15,11 +15,11 @@ module.exports = {
             serverQueue.loop = !serverQueue.loop;
             return message.channel.send({
                 embed: {
-                    color: "GREEN",
-                    description: `🔁  **|**  Loop is **\`${serverQueue.loop === true ? "enabled" : "disabled"}\`**`
+                    color: "YELLOW",
+                    description: `🔁  **|**  Loop is **\`${serverQueue.loop === true ? "Etkin" : "Kapalı"}\`**`
                 }
             });
         };
-    return sendError("There is nothing playing in this server.", message.channel);
+    return sendError("Bu sunucuda oynatılan hiçbir şey yok.", message.channel);
   },
 };

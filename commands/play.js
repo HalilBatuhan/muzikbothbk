@@ -15,11 +15,11 @@ module.exports = {
 
   run: async function (client, message, args) {
     let channel = message.member.voice.channel;
-    if (!channel)return sendError("I'm sorry but you need to be in a voice channel to play music!", message.channel);
+    if (!channel)return sendError("Lütfen herhangi bir ses kanalına girin.", message.channel);
 
     const permissions = channel.permissionsFor(message.client.user);
-    if (!permissions.has("CONNECT"))return sendError("I cannot connect to your voice channel, make sure I have the proper permissions!", message.channel);
-    if (!permissions.has("SPEAK"))return sendError("I cannot speak in this voice channel, make sure I have the proper permissions!", message.channel);
+    if (!permissions.has("CONNECT"))return sendError("Ses kanalınıza bağlanamıyorum, uygun izinlere sahip olduğumdan emin olun!", message.channel);
+    if (!permissions.has("SPEAK"))return sendError("Ses kanalınızda konuşamıyorum, uygun izinlere sahip olduğumdan emin olun!", message.channel);
 
     var searchString = args.join(" ");
     if (!searchString)return sendError("You didn't poivide want i want to play", message.channel);
@@ -31,7 +31,7 @@ module.exports = {
     if (url.match(/^(https?:\/\/)?(www\.)?(m\.)?(youtube\.com|youtu\.?be)\/.+$/gi)) {
        try {
           songInfo = await ytdl.getInfo(url)
-          if(!songInfo)return sendError("Looks like i was unable to find the song on YouTube", message.channel);
+          if(!songInfo)return sendError("Görünüşe göre şarkıyı YouTube'da bulamadım", message.channel);
         song = {
        id: songInfo.videoDetails.videoId,
        title: songInfo.videoDetails.title,
@@ -51,7 +51,7 @@ module.exports = {
     }else {
       try {
         var searched = await yts.search(searchString);
-    if(searched.videos.length === 0)return sendError("Looks like i was unable to find the song on YouTube", message.channel)
+    if(searched.videos.length === 0)return sendError("Görünüşe göre şarkıyı YouTube'da bulamadım", message.channel)
     
      songInfo = searched.videos[0]
         song = {
@@ -73,7 +73,7 @@ module.exports = {
     if (serverQueue) {
       serverQueue.songs.push(song);
       let thing = new MessageEmbed()
-      .setAuthor("Song has been added to queue", "https://raw.githubusercontent.com/SudhanPlayz/Discord-MusicBot/master/assets/Music.gif")
+      .setAuthor("Sıraya şarkı eklendi", "https://raw.githubusercontent.com/SudhanPlayz/Discord-MusicBot/master/assets/Music.gif")
       .setThumbnail(song.img)
       .setColor("YELLOW")
       .addField("Name", song.title, true)
