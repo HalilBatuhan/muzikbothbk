@@ -15,11 +15,11 @@ module.exports = {
       serverQueue.playing = true;
       serverQueue.connection.dispatcher.resume();
       let xd = new MessageEmbed()
-      .setDescription("▶ Resumed the music for you!")
+      .setDescription("▶ Senin İçin Şarkıyı Devam Ettirdim!")
       .setColor("YELLOW")
-      .setAuthor("Music has been Resumed!", "https://raw.githubusercontent.com/SudhanPlayz/Discord-MusicBot/master/assets/Music.gif")
+      .setAuthor("Müzik Devam Ettirildi!", "https://raw.githubusercontent.com/SudhanPlayz/Discord-MusicBot/master/assets/Music.gif")
       return message.channel.send(xd);
     }
-    return sendError("There is nothing playing in this server.", message.channel);
+    return sendError("Bu sunucuda oynatılan hiçbir şey yok.", message.channel);
   },
 };

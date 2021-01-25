@@ -104,7 +104,7 @@ module.exports = {
     var online = afk[message.guild.id]
     if (!song){
       if (!online.afk) {
-        sendError("Leaving the voice channel because I think there are no songs in the queue. If you like the bot stay 24/7 in voice channel run `!afk`", message.channel)
+        sendError("Sırada şarkı olmadığını için için ses kanalından ayrılıyorum. Eğer botu seviyorsanız, afk komutunu kullanarak ayrılamamı engelleyebilirsiniz`!afk`", message.channel)
         message.guild.me.voice.channel.leave();//botun 7/24 kalmasını istiyosan sil burayı
         message.client.queue.delete(message.guild.id);
       }
@@ -138,7 +138,7 @@ stream.on('error', function(er)  {
 
       dispatcher.setVolumeLogarithmic(queue.volume / 100);
       let thing = new MessageEmbed()
-      .setAuthor("Started Playing Music!", "https://raw.githubusercontent.com/SudhanPlayz/Discord-MusicBot/master/assets/Music.gif")
+      .setAuthor("Müzik Çalmaya Başladı!", "https://raw.githubusercontent.com/SudhanPlayz/Discord-MusicBot/master/assets/Music.gif")
       .setThumbnail(song.img)
       .setColor("BLUE")
       .addField("Name", song.title, true)
